@@ -24,7 +24,7 @@ const BlogDetailSection = () => {
             {blogItem?.title}
           </h1>
           <p className="text-center text-sm mt-2">{blogItem?.pub_date}</p>
-          <div className="md:block hidden relative overflow-hidden cursor-pointer">
+          <div className="relative overflow-hidden cursor-pointer">
             <div
               className="absolute inset-0 bg-gradient-to-t from-primary to-transparent overflow-hidden"
               style={{ zIndex: 1 }}
@@ -34,8 +34,8 @@ const BlogDetailSection = () => {
               src={blogItem?.img}
               alt=""
             />
-            <div className="absolute text-white bottom-8 z-10 px-4">
-              <h4 className="mb-4 text-4xl font-bold">{blogItem?.title}</h4>
+            <div className="absolute text-white bottom-2 z-10 px-4">
+              <h4 className="mb-4 md:text-4xl text-2xl font-bold">{blogItem?.title}</h4>
             </div>
           </div>
           <p className="text-sm">{blogItem?.description}</p>

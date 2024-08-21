@@ -1,12 +1,13 @@
 import React from 'react'
 import CreateBlogModal from './create-blog-modal'
+import Link from 'next/link'
 
 const Header = () => {
   return (
     <section className='bg-white shadow flex items-center justify-between sm:px-12 px-4 py-4'>
-        <div>
-            <h1>Logo</h1>
-        </div>
+        <Link href="/">
+            <h1 className='text-2xl font-bold'>Blog</h1>
+        </Link>
         <div className='flex gap-4 items-center justify-around'>
             <div>
                 <h1>Blogs</h1>

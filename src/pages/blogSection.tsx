@@ -22,24 +22,27 @@ const BlogSection = () => {
 
   return (
     <section className="sm:px-12 px-4 py-8">
-      <section className="flex items-center justify-between">
+      <section className="md:flex items-center justify-between">
         <div className="mb-8">
           <h1 className="text-2xl font-semibold">The Accessibility Blog</h1>
           <p>The voice of the excluded</p>
         </div>
         <div className="relative">
           <input
-            className="border border-primary rounded px-4 py-2 text-xs focus:outline-none w-full focus:w-96"
+            className="border border-primary rounded px-4 py-2 text-xs focus:outline-none w-full md:focus:w-96"
             type="text"
             placeholder="Search by Title"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <IoMdSearch className="absolute top-2 right-4" />
+            <IoMdSearch className="absolute top-2 right-4" />
         </div>
       </section>
 
-      <p className="text-center my-4 font-bold text-sm">{searchQuery && `Showing ${filteredBlogs.length} Result(s) of "${searchQuery}"`}</p>
+      <p className="text-center my-4 font-bold text-sm">
+        {searchQuery &&
+          `Showing ${filteredBlogs.length} Result(s) of "${searchQuery}"`}
+      </p>
 
       <section className="grid md:grid-cols-3 grid-cols-1 gap-8">
         {(searchQuery ? filteredBlogs : blogData).map((data) => (

@@ -11,7 +11,7 @@ const Header = () => {
             <div>
                 <h1>Blogs</h1>
             </div>
-            <div>
+            <div className='md:block hidden'>
                 <input className='border border-primary px-4 py-2 rounded text-sm focus:outline-none' type="text" placeholder='Text' />
             </div>
             <div>

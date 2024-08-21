@@ -45,7 +45,7 @@ const BlogSection = () => {
         </div>
         <div className="relative">
           <input
-            className="border border-secondary rounded px-4 py-2 text-xs focus:outline-none w-full md:focus:w-96"
+            className="border border-secondary rounded-xl px-4 py-2 text-sm focus:outline-none w-full md:focus:w-96"
             type="text"
             placeholder="Search by Title"
             value={searchQuery}
@@ -68,7 +68,7 @@ const BlogSection = () => {
           <Link
             key={data.id}
             href={{
-              pathname: `/blogDetail/${data.id}`,
+              pathname: `/blogDetail/${data.slug}`,
               query: { data: JSON.stringify(data) },
             }}
           >

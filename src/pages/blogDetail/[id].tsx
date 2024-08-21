@@ -21,9 +21,9 @@ const BlogDetailSection = () => {
         </Link>
         <div className="mt-12 md:w-8/12 mx-auto space-y-4">
           <h1 className="text-center text-xl font-semibold">
-            {blogItem.title}
+            {blogItem?.title}
           </h1>
-          <p className="text-center text-sm mt-2">{blogItem.pub_date}</p>
+          <p className="text-center text-sm mt-2">{blogItem?.pub_date}</p>
           <div className="md:block hidden relative overflow-hidden cursor-pointer">
             <div
               className="absolute inset-0 bg-gradient-to-t from-primary to-transparent overflow-hidden"
@@ -31,14 +31,14 @@ const BlogDetailSection = () => {
             ></div>
             <img
               className="w-full object-cover rounded-2xl"
-              src={blogItem.img}
+              src={blogItem?.img}
               alt=""
             />
             <div className="absolute text-white bottom-8 z-10 px-4">
-              <h4 className="mb-4 text-4xl font-bold">{blogItem.title}</h4>
+              <h4 className="mb-4 text-4xl font-bold">{blogItem?.title}</h4>
             </div>
           </div>
-          <p className="text-sm">{blogItem.description}</p>
+          <p className="text-sm">{blogItem?.description}</p>
         </div>
       </section>
       <Footer />

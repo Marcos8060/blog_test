@@ -8,8 +8,9 @@ const config: Config = {
   ],
   theme: {
     colors:{
-      primary: '#D9D9D9',
-      button: '#8E8E8E',
+      primary: '#111926',
+      button: '#0B1320',
+      secondary: '#D9D9D9',
       white: '#ffffff',
       link: '#0055CC',
     }

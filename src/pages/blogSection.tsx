@@ -45,7 +45,7 @@ const BlogSection = () => {
         </div>
         <div className="relative">
           <input
-            className="border border-primary rounded px-4 py-2 text-xs focus:outline-none w-full md:focus:w-96"
+            className="border border-secondary rounded px-4 py-2 text-xs focus:outline-none w-full md:focus:w-96"
             type="text"
             placeholder="Search by Title"
             value={searchQuery}
@@ -75,10 +75,10 @@ const BlogSection = () => {
             <div className="w-full">
               <img
                 className="w-full rounded-tl rounded-tr"
-                src="/images/sports.jpg"
+                src={data?.img}
                 alt=""
               />
-              <div className="bg-primary p-4 space-y-2 rounded-br rounded-bl">
+              <div className="bg-white shadow p-4 space-y-2 rounded-br rounded-bl">
                 <p className="text-sm">{data.pub_date}</p>
                 <h1 className="font-semibold">{data.title}</h1>
                 <p className="text-sm">{truncateText(data.description, 100)}</p>

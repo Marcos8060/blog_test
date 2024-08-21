@@ -15,7 +15,7 @@ function CreateBlogModal() {
   return (
     <>
       <button
-        className="bg-button text-white px-4 py-2 rounded text-sm"
+        className="bg-primary text-white px-4 py-2 rounded text-sm"
         onClick={onOpen}
       >
         Open Modal
@@ -70,9 +70,9 @@ function CreateBlogModal() {
                         Please upload images in 100x100 pixels size in either
                         PNG or JPEG format
                       </p>
-                      <button className="bg-button px-4 py-2 rounded text-white text-xs block">
+                      <div className="bg-button px-4 py-2 rounded text-white text-xs block cursor-pointer">
                         Browse files
-                      </button>
+                      </div>
                     </div>
                   </div>
                   <div>

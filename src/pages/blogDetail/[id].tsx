@@ -24,11 +24,20 @@ const BlogDetailSection = () => {
             {blogItem.title}
           </h1>
           <p className="text-center text-sm mt-2">{blogItem.pub_date}</p>
-          <img
-            className="h-80 w-full object-cover rounded"
-            src="/images/sports.jpg"
-            alt=""
-          />
+          <div className="md:block hidden relative overflow-hidden cursor-pointer">
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-primary to-transparent overflow-hidden"
+              style={{ zIndex: 1 }}
+            ></div>
+            <img
+              className="w-full object-cover rounded-2xl"
+              src={blogItem.img}
+              alt=""
+            />
+            <div className="absolute text-white bottom-8 z-10 px-4">
+              <h4 className="mb-4 text-4xl font-bold">{blogItem.title}</h4>
+            </div>
+          </div>
           <p className="text-sm">{blogItem.description}</p>
         </div>
       </section>

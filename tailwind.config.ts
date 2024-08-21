@@ -10,7 +10,8 @@ const config: Config = {
     colors:{
       primary: '#D9D9D9',
       button: '#8E8E8E',
-      white: '#ffffff'
+      white: '#ffffff',
+      link: '#0055CC',
     }
   },
   plugins: [],

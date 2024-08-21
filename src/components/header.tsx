@@ -1,8 +1,9 @@
 import React from 'react'
+import CreateBlogModal from './create-blog-modal'
 
 const Header = () => {
   return (
-    <section className='bg-primary flex items-center justify-between p-4'>
+    <section className='bg-primary flex items-center justify-between sm:px-12 px-4 py-4'>
         <div>
             <h1>Logo</h1>
         </div>
@@ -14,7 +15,8 @@ const Header = () => {
                 <input className='border border-primary px-4 py-2 rounded text-sm focus:outline-none' type="text" placeholder='Text' />
             </div>
             <div>
-                <button className='bg-button text-white px-4 py-2 rounded text-sm'>Create Blog Post</button>
+                <CreateBlogModal />
+                {/* <button className='bg-button text-white px-4 py-2 rounded text-sm'>Create Blog Post</button> */}
             </div>
         </div>
     </section>

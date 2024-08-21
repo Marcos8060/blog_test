@@ -1,11 +1,12 @@
 import { blogData } from "@/components/blogData";
-import { filter } from "@chakra-ui/react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { IoMdSearch } from "react-icons/io";
 
 const BlogSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const blogsPerPage = 5;
 
   // Function to truncate text
   const truncateText = (text: string, maxLength: number) => {
@@ -20,6 +21,21 @@ const BlogSection = () => {
     data.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(filteredBlogs.length / blogsPerPage);
+
+  // Get the blogs for the current page
+  const getPaginatedBlogs = () => {
+    const startIndex = (currentPage - 1) * blogsPerPage;
+    const endIndex = startIndex + blogsPerPage;
+    return filteredBlogs.slice(startIndex, endIndex);
+  };
+
+  // Handle page change
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <section className="sm:px-12 px-4 py-8">
       <section className="md:flex items-center justify-between">
@@ -33,19 +49,22 @@ const BlogSection = () => {
             type="text"
             placeholder="Search by Title"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setCurrentPage(1); // Reset to the first page on search
+            }}
           />
-            <IoMdSearch className="absolute top-2 right-4" />
+          <IoMdSearch className="absolute top-2 right-4" />
         </div>
       </section>
 
       <p className="text-center my-4 font-bold text-sm">
         {searchQuery &&
-          `Showing ${filteredBlogs.length} Result(s) of "${searchQuery}"`}
+          `Showing ${filteredBlogs.length} Result(s) for "${searchQuery}"`}
       </p>
 
       <section className="grid md:grid-cols-3 grid-cols-1 gap-8">
-        {(searchQuery ? filteredBlogs : blogData).map((data) => (
+        {getPaginatedBlogs().map((data) => (
           <Link
             key={data.id}
             href={{
@@ -66,6 +85,20 @@ const BlogSection = () => {
               </div>
             </div>
           </Link>
+        ))}
+      </section>
+
+      <section className="flex justify-center mt-8">
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            key={index}
+            onClick={() => handlePageChange(index + 1)}
+            className={`mx-1 px-3 py-1 rounded ${
+              currentPage === index + 1 ? "bg-primary text-white" : "bg-gray-200"
+            }`}
+          >
+            {index + 1}
+          </button>
         ))}
       </section>
     </section>

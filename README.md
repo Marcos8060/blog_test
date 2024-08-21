@@ -7,16 +7,17 @@
 
 ## Installation Instructions
 
-First, run the development server:
 
 ```bash
 1. clone the repository
 
 "git clone https://github.com/Marcos8060/blog_test.git"
 
-2. Install the packages => "npm install"
+2. cd into the project directory => "cd blog_test"
 
-3. Run the development server => "npm run dev"
+3. Install the packages => "npm install"
+
+4. Run the development server => "npm run dev"
 
 ```
 

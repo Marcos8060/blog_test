@@ -8,7 +8,7 @@ export const API_URL = {
 
 
     /***************** TEST APIS **********************/
-    FETCH_BLOGS: `${process.env.NEXT_PUBLIC_BASE_URL}/blogs`,
+    FETCH_BLOGS: `${process.env.NEXT_PUBLIC_BASE_URL}/api/blogs/`,
     
 }
 

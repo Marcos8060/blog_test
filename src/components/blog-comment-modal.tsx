@@ -35,8 +35,8 @@ function BlogCommentModal({ data }: any) {
                 <p className="font-bold">{data.title}</p>
               </div>
               <div className="py-3 px-4 h-[40vh] overflow-y-auto">
-                {data?.comments.map((comment: any) => (
-                  <div className="my-4">
+                {data?.comments.map((comment: any,index:any) => (
+                  <div key={index} className="my-4">
                     <div className="flex gap-2 my-2">
                       <p className="font-bold text-sm">{comment.author}:</p>
                       <p className="text-sm">{comment.text}</p>

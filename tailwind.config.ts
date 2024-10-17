@@ -13,6 +13,7 @@ const config: Config = {
       secondary: '#D9D9D9',
       white: '#ffffff',
       link: '#0055CC',
+      gray: '#A4A4A4',
     }
   },
   plugins: [],

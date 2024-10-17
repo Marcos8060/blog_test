@@ -7,7 +7,6 @@ export const config = {
       sizeLimit: "1024mb", // Set desired value here
     },
   },
-  maxDuration: 120
 };
 export default async function handler(req, res) {
   if (req.method === API_METHODS.GET) {

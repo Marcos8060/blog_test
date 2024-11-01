@@ -1,5 +1,5 @@
 import { backendAxiosInstance } from "@/assets/backend-axios-instance";
-import { API_URL,API_METHODS } from "../../../assets/api-endpoints";
+import { API_URL, API_METHODS } from "../../../assets/api-endpoints";
 
 export const config = {
   api: {
@@ -42,12 +42,6 @@ export default async function handler(req, res) {
         },
       };
       const body = req.body;
-
-
-      console.log("ADD_COMMENT_PAYLOAD ",body)
-      // console.log("ADD_COMMENT_ENDPOINT ",`${API_URL.ADD_COMMENT}/${id}`)
-
-      console.log("PAYLOADS ",body.id, { text: body.text })
 
       await backendAxiosInstance
         .post(`${API_URL.ADD_COMMENT}/${body.id}`, { text: body.text })

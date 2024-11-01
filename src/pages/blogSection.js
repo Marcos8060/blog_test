@@ -29,7 +29,7 @@ const BlogSection = () => {
   };
 
   // Filter blogs by title
-  const filteredBlogs = blogs.filter((data) =>
+  const filteredBlogs = Array.isArray(blogs) && blogs.filter((data) =>
     data.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -60,7 +60,7 @@ const BlogSection = () => {
       </p>
 
       <section className="grid md:grid-cols-3 grid-cols-1 gap-8">
-        {filteredBlogs.map((data) => (
+        {Array.isArray(filteredBlogs) && filteredBlogs.map((data) => (
           <div key={data.id}>
             {/* <Link
               key={data.id}
@@ -70,11 +70,11 @@ const BlogSection = () => {
               }}
             > */}
             <div className="w-full">
-              <img
+              {/* <img
                 className="w-full rounded-tl rounded-tr"
-                src={`${process.env.NEXT_PUBLIC_BASE_URL}/${data.image}`}
+                src={`${process.env.NEXT_PUBLIC_BASE_URL}/${data?.image}`}
                 alt=""
-              />
+              /> */}
               <div className="bg-white shadow p-4 space-y-2 rounded-br rounded-bl h-[30vh] relative">
                 <h1 className="font-semibold">{data.title}</h1>
                 <p className="text-sm">{truncateText(data.description, 50)}</p>

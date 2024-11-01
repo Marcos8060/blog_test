@@ -15,3 +15,16 @@ export const fetchBlogs = () => {
   });
 };
 
+export const addComment = (id,text) => {
+  const axiosInstance = UseAxios();
+  return new Promise((resolve, reject) => {
+    axiosInstance
+      .post(`${APP_API_URL.ADD_COMMENT}`,{id,text})
+      .then((res) => {
+        resolve(res.data);
+      })
+      .catch((err) => {
+        reject(err.message);
+      });
+  });
+};

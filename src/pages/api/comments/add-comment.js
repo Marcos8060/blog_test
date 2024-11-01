@@ -42,16 +42,15 @@ export default async function handler(req, res) {
         },
       };
       const body = req.body;
-      const api_key = process.env.NEXT_PUBLIC_API_KEY;
 
-      const payload = {
-        api_key: api_key,
-        ...body,
-      };
 
+      console.log("ADD_COMMENT_PAYLOAD ",body)
+      // console.log("ADD_COMMENT_ENDPOINT ",`${API_URL.ADD_COMMENT}/${id}`)
+
+      console.log("PAYLOADS ",body.id, { text: body.text })
 
       await backendAxiosInstance
-        .post(`${API_URL.FETCH_TESTS}`, payload, config)
+        .post(`${API_URL.ADD_COMMENT}/${body.id}`, { text: body.text })
         .then((response) => {
           res.status(200).json(response.data);
         })

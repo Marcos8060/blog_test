@@ -13,7 +13,7 @@ const BlogSection = () => {
   const { blogs } = useSelector((store) => store.blog);
 
   const getBlogs = async () => {
-    dispatch(getAllBlogs());
+    await dispatch(getAllBlogs());
   };
 
   useEffect(() => {
@@ -61,7 +61,7 @@ const BlogSection = () => {
 
       <section className="grid md:grid-cols-3 grid-cols-1 gap-8">
         {filteredBlogs.map((data) => (
-          <>
+          <div key={data.id}>
             {/* <Link
               key={data.id}
               href={{
@@ -94,13 +94,13 @@ const BlogSection = () => {
                 <section>
                   <BlogCommentModal {...{ data }} />
                   <div className="absolute bottom-1 w-full left-2">
-                    <AddComment />
+                    <AddComment {...{ data }} />
                   </div>
                 </section>
               </div>
             </div>
             {/* </Link> */}
-          </>
+          </div>
         ))}
       </section>
     </section>
